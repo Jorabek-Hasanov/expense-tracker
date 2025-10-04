@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Expense Tracker</h1>
+    
+    <!-- Form -->
+    <form id="expenseForm">
+      <label for="desc" class="visually-hidden">Description</label>
+      <input type="text" id="desc" name="desc" placeholder="Enter description" required />
+
+      <label for="amount" class="visually-hidden">Amount</label>
+      <input type="number" id="amount" name="amount" placeholder="Enter amount" min="0" step="0.01" required />
+
+      <label for="category" class="visually-hidden">Category</label>
+      <select id="category" name="category" required>
+        <option value="" disabled selected>Select category</option>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <button type="submit">Add Expense</button>
+    </form>
+
+    <!-- Expense List -->
+    <ul id="expenseList"></ul>
+
+    <!-- Summary -->
+    <div id="summary">
+      <p>Total Income: <span id="income">0</span></p>
+      <p>Total Expense: <span id="expense">0</span></p>
+      <p>Balance: <span id="balance">0</span></p>
+    </div>
+
+    <!-- Chart Section -->
+    <div id="chartContainer">
+      <canvas id="expenseChart"></canvas>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
